@@ -1,10 +1,7 @@
+package lti.bank;
 import lti.bank.Bank;
 import lti.bank.Transaction;
-/**
- * This is the class of account.
- * @author yash dhiren
- * @version 0.0
- */
+
 public abstract class Account implements Bank{
 	private int acntNo;
 	private String holder;
