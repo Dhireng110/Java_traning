@@ -1,6 +1,6 @@
 
-public class Member extends Lib {
-	private String member_name;
+public class Member extends Book {
+	private static String member_name;
 
 	public Member() {
 		// TODO Auto-generated constructor stub

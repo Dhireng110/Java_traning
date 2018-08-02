@@ -1,6 +1,6 @@
 
 public class Book extends Lib {
-	private String s_book_name;
+	private static String s_book_name;
 	public Book() {
 		// TODO Auto-generated constructor stub
 	}
