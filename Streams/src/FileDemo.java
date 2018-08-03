@@ -8,7 +8,7 @@ public class FileDemo {
 		String path = "D:/song/song.txt";
 		File f = new File(path);
 		if (f.exists()) {
-			System.out.println(f.getPath());
+//			System.out.println(f.getPath());
 			System.out.println(f.getName());
 			System.out.println(f.getParent());
 
