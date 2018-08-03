@@ -5,7 +5,7 @@ public final class AccountFactory {
 	}
 	public static Bank openAccount(String type, String holder) {
 		Bank acnt = null;
-		if (type.equals("savings"))
+		if (type.equals("saving"))
 			acnt = new Savings(holder);
 		else
 			acnt = new Current(holder);

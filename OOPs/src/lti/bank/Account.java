@@ -21,8 +21,7 @@ public abstract class Account implements Bank{
 		this.holder = holder;
 		this.balance = balance;
 		
-		txns = new Transaction[10];
-		txns[idx ++]= new Transaction("OB",balance,balance);
+		
 	}
 
 	public void summary() {
