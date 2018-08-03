@@ -1,5 +1,5 @@
 
-public class MyEunnable implements Runnable {
+public class MyRunnable implements Runnable {
 
 	private int data;
 	public void run() {
@@ -12,7 +12,7 @@ public class MyEunnable implements Runnable {
 	
 	}
 	public static void main(String[] args) {
-		MyEunnable mr= new MyEunnable();
+		MyRunnable mr= new MyRunnable();
 		Thread t1 = new Thread(mr,"First");
 		Thread t2 = new Thread(mr,"First");
 		Thread t3 = new Thread(mr,"First");
