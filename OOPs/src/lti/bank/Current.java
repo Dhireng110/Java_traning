@@ -1,4 +1,7 @@
 package lti.bank;
+
+import java.util.Vector;
+
 public class Current extends Account {
 	private int Overdraft;
 	public Current() {
@@ -7,8 +10,8 @@ public class Current extends Account {
 	public Current(String holder) {
 		super(holder, MIN_CUR_BAL);
 		this.Overdraft=OVERDRAFT_AMT;
-		txns = new Transaction[10];
-		txns[idx ++]= new CurrentTransaction("OB",balance,balance,Overdraft);
+		txns = new Vector <Transaction>();
+		txns.add(new CurrentTransaction("OB",balance,balance,Overdraft));
 	}
 
 	@Override
@@ -18,7 +21,7 @@ public class Current extends Account {
 				balance += Overdraft - OVERDRAFT_AMT;
 				Overdraft = OVERDRAFT_AMT;
 			}
-			txns[idx ++]= new CurrentTransaction("CR",amount,balance,Overdraft);
+			txns.add(new CurrentTransaction("CR",amount,balance,Overdraft));
 		}
 
 	@Override
@@ -29,7 +32,7 @@ public class Current extends Account {
 				Overdraft += balance;
 				balance = MIN_CUR_BAL;
 			}
-			txns[idx++] = new CurrentTransaction("DR", amount, balance, Overdraft);
+			txns.add(new CurrentTransaction("DR", amount, balance, Overdraft));
 		} else
 			throw new BalanceException("Insufficfent funds");
 	}

@@ -2,7 +2,7 @@ package lti.bank;
 public class TestAccount {
 
 	public static void main(String[] args) {
-		Bank ac=AccountFactory.openAccount("currentt","Polo");
+		Bank ac=AccountFactory.openAccount("saving","Polo");
 		ac.deposit(3000);
 		try {
 			ac.withdraw(4000);
@@ -15,14 +15,14 @@ public class TestAccount {
 		ac.deposit(5000);
 		ac.deposit(6000);
 		ac.deposit(8000);
-		try {
+		/*try {
 			ac.withdraw(700000);
 		} catch (BalanceException e) {
 			e.printStackTrace();	// for developeers to trole shoot	
 			}
 		finally {
 			System.out.println("executed");
-		}
+		}*/
 		ac.statement();
 //		Savings savings=new Savings("Dhiren");
 //		savings.deposit(2000);

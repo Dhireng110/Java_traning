@@ -1,4 +1,6 @@
 package lti.bank;
+import java.util.Vector;
+
 import lti.bank.Bank;
 import lti.bank.Transaction;
 
@@ -6,8 +8,7 @@ public abstract class Account implements Bank{
 	private int acntNo;
 	private String holder;
 	protected double balance;
-	
-	protected Transaction[] txns;
+	protected  Vector<Transaction> txns;
 	protected int idx;
 
 	private static int autogen = INIT_ACNT_NO;
@@ -36,15 +37,14 @@ public abstract class Account implements Bank{
 
 	public void deposit(double amount) {
 		balance += amount;
-		txns[idx ++]= new Transaction("CR",amount,balance);
-
+		txns.add(new Transaction("CR",amount,balance));
 	}
 
 
 	
 	public void statement() {
 		System.out.println("Statement of a/c"+acntNo);
-		for(int i=0;i<idx;i++)
-			System.out.println(txns[i]);
+		for(int i=0;i<txns.size();i++)
+			System.out.println(txns.get(i));
 	}
 }
